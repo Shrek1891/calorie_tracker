@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <select name="food_consumed" id="food_consumed">
+        {% for f in food %}
+        <option value="{{ f.id }}">{{ f.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>
