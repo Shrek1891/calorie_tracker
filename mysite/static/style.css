@@ -52,6 +52,8 @@ select {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    border: 1px solid #ccc
 }
 
 .tittles {
@@ -68,7 +70,7 @@ select {
     border-bottom: 1px solid #dadada;
 }
 
-span,h5 {
+span, h5 {
     display: flex;
     flex: 1;
     font-size: 14px;
@@ -76,4 +78,39 @@ span,h5 {
     justify-content: center;
     align-items: center;
     transition: all 0.15s ease-in-out;
+}
+
+
+.bar {
+    width: 80%;
+    height: 20px;
+    background-color: #007bff;
+    margin-bottom: 10px;
+}
+
+.remove {
+    display: flex;
+    flex: 1;
+    font-size: 14px;
+    padding: 8px 0;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s ease-in-out;
+    background-color: #ff0000;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-group a {
+    text-decoration: none;
+    margin-left: 10px !important;
+}
+
+.progress-bar {
+    background-color: blueviolet !important;
 }
