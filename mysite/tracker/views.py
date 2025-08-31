@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
@@ -8,6 +9,7 @@ from tracker.models import Food, Consumed
 
 def index(request):
     if not request.user.is_authenticated:
+        authenticate(username='test', password='test')
         return redirect('/admin')
     if request.method == 'POST':
         food_consumed = request.POST['food_consumed']
@@ -22,8 +24,11 @@ def index(request):
     return render(request, 'tracker/index.html', {'food': food, 'consumed_food': consumed_food})
 
 def delete(request, id):
+    if not request.user.is_authenticated:
+        return redirect('/admin')
     consumed = Consumed.objects.get(id=id)
     if request.method == 'POST':
         consumed.delete()
         return redirect('/')
     return render(request, 'tracker/delete.html')
+
