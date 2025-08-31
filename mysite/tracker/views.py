@@ -1,10 +1,14 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from tracker.models import Food, Consumed
 
 
 # Create your views here.
+
 def index(request):
+    if not request.user.is_authenticated:
+        return redirect('/admin')
     if request.method == 'POST':
         food_consumed = request.POST['food_consumed']
         consume = Food.objects.get(id=food_consumed)
