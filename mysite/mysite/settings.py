@@ -128,3 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+CRF_TRUSTED_ORIGINS = [
+    "https://calorie-tracker-1-59hs.onrender.com/"
+]
