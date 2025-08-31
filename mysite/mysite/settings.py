@@ -132,3 +132,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 CRF_TRUSTED_ORIGINS = [
     "https://calorie-tracker-1-59hs.onrender.com/"
 ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
